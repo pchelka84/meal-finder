@@ -9,6 +9,25 @@
   <title>Meal Finder</title>
 </head>
 <body>
+  <div class="contanier">
+    <h1>Meal Finder</h1>
+    <div class="flex">
+      <form id="submit" class="flex">
+        <input type="text" id="search" placeholder="Search for meals or keywords">
+        <button class="search-btn" type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+
+      <button class="random-btn" id="random">
+        <div class="fas fa-random"></div>
+      </button>
+    </div>
+
+    <div id="result-heading"></div>
+    <div id="meals" class="meals"></div>
+    <div id="single-Meal"></div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
