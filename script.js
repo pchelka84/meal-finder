@@ -23,10 +23,28 @@ function searchMeal(e) {
         console.log(data);
         resultHeading.innerHTML = `<h2>Search results for '${term}':</h2>`;
 
-    })
-   } else {
-     alert('Please enter your search keyword');
-   }
+        if (data.meals === null) {
+          resultHeading.innerHTML = `<p>There are no search results. Try again!<p>`;
+        } else {
+          mealsEl.innerHTML = data.meals
+            .map(
+              meal => `
+            <div class="meal">
+              <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
+              <div class="meal-info" data-mealID="${meal.idMeal}">
+                <h3>${meal.strMeal}</h3>
+              </div>
+            </div>
+          `
+            )
+            .join('');
+        }
+      });
+    // Clear search text
+    search.value = '';
+  } else {
+    alert('Please enter your search keyword');
+  }
 }
 
 // Event Listeners
